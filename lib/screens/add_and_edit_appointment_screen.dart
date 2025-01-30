@@ -40,19 +40,14 @@ class _AddAppointmentScreenState extends State<AddAppointmentScreen> {
 
   TimeOfDay _parseTime(String time) {
     try {
-      // Ensure the time is trimmed of spaces
       final cleanTime = time.trim();
-
-      // Split the time string into hours and minutes
       final parts = cleanTime.split(":");
       final hour = int.parse(parts[0]);
       final minute = int.parse(parts[1]);
-
-      // Return the TimeOfDay object
       return TimeOfDay(hour: hour, minute: minute);
     } catch (e) {
       print("Error parsing time: $time");
-      rethrow;  // rethrow the error or handle it appropriately
+      rethrow;
     }
   }
 
@@ -62,6 +57,7 @@ class _AddAppointmentScreenState extends State<AddAppointmentScreen> {
       initialDate: selectedDate,
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
+      locale: Locale('cs', 'CZ'), // Set the locale to Czech
     );
     if (pickedDate != null) {
       setState(() {
@@ -74,6 +70,14 @@ class _AddAppointmentScreenState extends State<AddAppointmentScreen> {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: selectedTime,
+      builder: (BuildContext context, Widget? child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            alwaysUse24HourFormat: true, // Optional: Use 24-hour format
+          ),
+          child: child!,
+        );
+      },
     );
     if (pickedTime != null) {
       setState(() {

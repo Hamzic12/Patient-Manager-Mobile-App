@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'add_and_edit_appointment_screen.dart';
+import 'appointment_detail_screen.dart'; // Import the detail screen
 
 class AppointmentsScreen extends StatefulWidget {
   @override
@@ -145,6 +146,17 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
                 return ListTile(
                   title: Text('${filteredAppointments[index]['firstName']} ${filteredAppointments[index]['lastName']}'),
                   subtitle: Text('${filteredAppointments[index]['time']}'),
+                  onTap: () {
+                    // Cast appointment from Map<String, dynamic> to Map<String, String>
+                    Map<String, String> appointmentDetail = Map<String, String>.from(filteredAppointments[index]);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AppointmentDetailScreen(appointment: appointmentDetail),
+                      ),
+                    );
+                  },
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
