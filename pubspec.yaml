@@ -1,0 +1,32 @@
+name: urologieteplice
+description: "Urologie Teplice"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.18.0
+  uuid: ^3.0.7
+  path_provider: ^2.0.11
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/pacient.png
+    - assets/images/inventory.png
+    - assets/data/appointments.json
+    - assets/data/inventory.json
+
+
