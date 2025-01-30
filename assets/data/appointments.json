@@ -1,0 +1,38 @@
+[
+  {
+    "firstName": "Jan",
+    "lastName": "Novák",
+    "phone": "123456789",
+    "email": "jan.novak@email.com",
+    "symptoms": "Bolesti hlavy",
+    "date": "01-02-2025",
+    "time": "10:00"
+  },
+  {
+    "firstName": "Petra",
+    "lastName": "Kovářová",
+    "phone": "987654321",
+    "email": "petra.kovarova@email.com",
+    "symptoms": "Únava a horečka",
+    "date": "01-02-2025",
+    "time": "11:00"
+  },
+  {
+    "firstName": "Martin",
+    "lastName": "Černý",
+    "phone": "555123456",
+    "email": "martin.cerny@email.com",
+    "symptoms": "Bolest v krku",
+    "date": "02-02-2025",
+    "time": "14:00"
+  },
+  {
+    "firstName": "Eva",
+    "lastName": "Dvořáková",
+    "phone": "654321987",
+    "email": "eva.dvorakova@email.com",
+    "symptoms": "Zimnice a bolest svalů",
+    "date": "03-02-2025",
+    "time": "09:00"
+  }
+] 
