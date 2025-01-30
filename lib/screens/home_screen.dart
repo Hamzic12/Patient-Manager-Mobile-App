@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           tabs: [
             Tab(
               icon: Icon(Icons.calendar_today),
-              text: 'Schůzky',
+              text: 'Návštěvy',
             ),
             Tab(
               icon: Icon(Icons.inventory),
