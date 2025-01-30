@@ -9,7 +9,7 @@ class AppointmentDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail schůzky'),
+        title: Text('Detail návštěvy'),
       ),
       body: Padding(
         padding: EdgeInsets.all(20.0),

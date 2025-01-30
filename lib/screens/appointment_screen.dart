@@ -118,7 +118,7 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Schůzky')),
+      appBar: AppBar(title: Text('Návštěvy')),
       body: Column(
         children: [
           ElevatedButton(
