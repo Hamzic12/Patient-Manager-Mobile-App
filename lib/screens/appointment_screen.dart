@@ -101,19 +101,22 @@ class _AppointmentsScreenState extends State<AppointmentsScreen> {
 
   // Navigate to the AddAppointmentScreen for editing an existing appointment
   void _navigateToEditAppointment(int index) async {
+    int originalIndex = appointments.indexOf(filteredAppointments[index]);
+
     final updatedAppointment = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => AddAppointmentScreen(
-          selectedDate: DateFormat('dd-MM-yyyy').parse(appointments[index]['date']),
-          existingAppointment: Map<String, String>.from(appointments[index]),
+          selectedDate: DateFormat('dd-MM-yyyy').parse(appointments[originalIndex]['date']),
+          existingAppointment: Map<String, String>.from(appointments[originalIndex]),
           onSubmit: (updatedAppointment) {
-            _editAppointment(index, updatedAppointment);
+            _editAppointment(originalIndex, updatedAppointment);
           },
         ),
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
